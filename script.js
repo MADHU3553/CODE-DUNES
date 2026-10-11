@@ -8,15 +8,6 @@
 document.addEventListener("DOMContentLoaded", () => {
   // 1. Initialize Ambient Moving Sand Particles
   initAmbientDesertDust();
-
-  // 2. Button Navigation to Page 2 (form.html)
-  const startBtn = document.getElementById("start-contest-btn");
-  if (startBtn) {
-    startBtn.addEventListener("click", (e) => {
-      // Allow natural link navigation or redirect
-      window.location.href = "form.html";
-    });
-  }
 });
 
 /**
