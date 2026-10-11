@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>CODE DUNES — Spardha 2k26 | A Competitive Coding Challenge</title>
+  
+  <!-- SEO & Social Meta Tags -->
+  <meta name="description" content="Enter CODE DUNES — Spardha 2k26 Uncharted. A competitive coding challenge where code finds the way through uncharted territory.">
+  <meta name="theme-color" content="#0d0906">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/jpeg" href="assets/code-dunes-poster.jpg">
+
+  <!-- Google Fonts: Bebas Neue, Cinzel & Montserrat -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Cinzel:wght@500;700;800&family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <!-- Core Stylesheet for Landing Page -->
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- ============================================================
+       PAGE 1: LANDING PAGE
+       Full-screen cinematic desert hero with ambient dust particles
+       ============================================================ -->
+  <main class="hero" id="hero-portal" role="main">
+
+    <!-- Ambient Desert Dust Canvas (moving sand particles) -->
+    <canvas id="sand-canvas" aria-hidden="true"></canvas>
+
+    <!-- Subtle Cinematic Dark Vignette & Desert Atmosphere Overlay -->
+    <div class="hero-overlay" aria-hidden="true"></div>
+
+    <!-- Festival / Event Badge (Top indicator) -->
+    <div class="festival-badge" id="fest-tag">
+      <span class="fest-pill">
+        <span class="fest-prefix">ACM VVITU PRESENTS</span>
+        <span class="meta-dot" aria-hidden="true">◆</span>
+        <span>SPARDHA 2K26 — UNCHARTED</span>
+      </span>
+    </div>
+
+    <!-- ============================================================
+         CENTER CONTENT
+         Main focal area: Title, Taglines, Feature highlights & Action Button
+         ============================================================ -->
+    <div class="hero-content" id="main-content">
+      
+      <!-- Main Title: CODE DUNES -->
+      <h1 class="contest-title" id="contest-title" data-text="CODE DUNES">
+        CODE DUNES
+      </h1>
+
+      <!-- Tagline with Ancient Parchment / Banner Accent -->
+      <div class="tagline-wrapper" id="tagline-wrap">
+        <p class="tagline" id="contest-tagline">
+          WHEN THE PATH IS UNCHARTED, CODE FINDS THE WAY.
+        </p>
+      </div>
+
+      <!-- Challenge Category Subtitle -->
+      <p class="challenge-subtitle" id="contest-subtitle">
+        A COMPETITIVE CODING CHALLENGE
+      </p>
+
+
+      <!-- Primary Action: Button Navigating to Page 2 (form.html) -->
+      <div class="action-container" id="action-area">
+        <a href="form.html" class="btn-start" id="start-contest-btn" aria-label="Proceed to Registration Form">
+          <span class="btn-glow" aria-hidden="true"></span>
+          <span class="btn-text">ENTER CONTEST</span>
+          <svg class="btn-arrow" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <line x1="5" y1="12" x2="19" y2="12"></line>
+            <polyline points="12 5 19 12 12 19"></polyline>
+          </svg>
+        </a>
+      </div>
+
+    </div>
+
+    <!-- ============================================================
+         EVENT DETAILS (Bottom of Screen)
+         Essential metadata: INDIVIDUAL · 12 OCT 2026 · CODE ARENA
+         ============================================================ -->
+    <footer class="event-details" id="event-meta" role="contentinfo">
+      <div class="meta-inner">
+        <span class="meta-item">INDIVIDUAL</span>
+        <span class="meta-dot" aria-hidden="true">◆</span>
+        <span class="meta-item">12 OCT 2026</span>
+        <span class="meta-dot" aria-hidden="true">◆</span>
+        <span class="meta-item platform">CODE ARENA</span>
+      </div>
+    </footer>
+
+  </main>
+
+  <!-- Script for ambient dust particles & interactions -->
+  <script src="script.js"></script>
+</body>
+</html>
