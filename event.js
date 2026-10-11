@@ -8,78 +8,7 @@
 document.addEventListener("DOMContentLoaded", () => {
   // 1. Initialize Ambient Desert Dust
   initAmbientDesertDust();
-
-  // 2. Audio Synthesizer
-  const sound = new AudioSynthesizer();
-
-  // 3. Start Main Event Button Action
-  const btnStart = document.getElementById("btn-start-main-event");
-  const launchOverlay = document.getElementById("launch-overlay");
-  const closePlaceholder = document.getElementById("placeholder-close");
-
-  if (btnStart && launchOverlay) {
-    btnStart.addEventListener("click", () => {
-      sound.playClick();
-      launchOverlay.classList.add("active");
-      launchOverlay.setAttribute("aria-hidden", "false");
-      if (closePlaceholder) closePlaceholder.focus();
-    });
-  }
-
-  function hidePlaceholder() {
-    if (!launchOverlay) return;
-    launchOverlay.classList.remove("active");
-    launchOverlay.setAttribute("aria-hidden", "true");
-    if (btnStart) btnStart.focus();
-  }
-
-  if (closePlaceholder) closePlaceholder.addEventListener("click", hidePlaceholder);
-
-  document.addEventListener("keydown", (event) => {
-    if (event.key === "Escape" && launchOverlay?.classList.contains("active")) {
-      hidePlaceholder();
-    }
-  });
 });
-
-// Web Audio API Synthesizer
-class AudioSynthesizer {
-  constructor() {
-    this.ctx = null;
-  }
-
-  init() {
-    if (!this.ctx && (window.AudioContext || window.webkitAudioContext)) {
-      const AudioCtx = window.AudioContext || window.webkitAudioContext;
-      this.ctx = new AudioCtx();
-    }
-  }
-
-  playBeep(freq = 440, type = 'sine', duration = 0.1, gainVal = 0.08) {
-    try {
-      this.init();
-      if (this.ctx && this.ctx.state === 'suspended') this.ctx.resume();
-      if (!this.ctx) return;
-
-      const osc = this.ctx.createOscillator();
-      const gain = this.ctx.createGain();
-      osc.type = type;
-      osc.frequency.setValueAtTime(freq, this.ctx.currentTime);
-      gain.gain.setValueAtTime(gainVal, this.ctx.currentTime);
-      gain.gain.exponentialRampToValueAtTime(0.0001, this.ctx.currentTime + duration);
-
-      osc.connect(gain);
-      gain.connect(this.ctx.destination);
-      osc.start();
-      osc.stop(this.ctx.currentTime + duration);
-    } catch (e) {}
-  }
-
-  playClick() {
-    this.playBeep(650, 'triangle', 0.06, 0.05);
-  }
-
-}
 
 // Ambient Desert Dust Canvas
 function initAmbientDesertDust() {
